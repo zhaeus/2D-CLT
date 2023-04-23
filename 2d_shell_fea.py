@@ -13,8 +13,6 @@ import matplotlib.pyplot as plt
 # 1. No porosity 
 # 2. Symmetric laminate
 
-# 
-# if change_values == 1:
 
 def input_values():
     global t, ply_angle, num_ply, num_gen
@@ -23,9 +21,7 @@ def input_values():
     t /= 10e3
     
     ## Number of plies
-    num_ply = int(input("Enter the number of plies:  "))
-    # print(f"Number of plies is {num_ply}")
-    
+    num_ply = int(input("Enter the number of plies:  "))    
     
     ply_angle = np.array(())
     ply_angle = np.array([])
@@ -51,8 +47,6 @@ def input_values():
     Mx = float(input("Enter moment about x-axis in N.m:"))
     My = float(input("Enter moment about y-axis in N.m:"))
     Mxy = float(input("Enter twisting moment in N.m:"))
-    
-    
     
     num_gen = 2 
     
@@ -231,41 +225,40 @@ for k in range(num_ply):
 
 ## Graphing 
 # Create some mock data
-t = np.arange(0.01, 10.0, 0.01)
-data1 = np.exp(t)
-data2 = np.sin(2 * np.pi * t)
+# t = np.arange(0.01, 10.0, 0.01)
+# data1 = np.exp(t)
+# data2 = np.sin(2 * np.pi * t)
 
-fig, ax1 = plt.subplots()
+# fig, ax1 = plt.subplots()
 
-color = 'tab:red'
-ax1.set_xlabel('time (s)')
-ax1.set_ylabel('exp', color=color)
-ax1.plot(t, data1, color=color)
-ax1.tick_params(axis='y', labelcolor=color)
+# color = 'tab:red'
+# ax1.set_xlabel('time (s)')
+# ax1.set_ylabel('exp', color=color)
+# ax1.plot(t, data1, color=color)
+# ax1.tick_params(axis='y', labelcolor=color)
 
-ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+# ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
-color = 'tab:blue'
-ax2.set_ylabel('sin', color=color)  # we already handled the x-label with ax1
-ax2.plot(t, data2, color=color)
-ax2.tick_params(axis='y', labelcolor=color)
+# color = 'tab:blue'
+# ax2.set_ylabel('sin', color=color)  # we already handled the x-label with ax1
+# ax2.plot(t, data2, color=color)
+# ax2.tick_params(axis='y', labelcolor=color)
 
-fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.show()
+# fig.tight_layout()  # otherwise the right y-label is slightly clipped
+# plt.show()
     
-
-
+## 
+#! Use PyQt (!)
 
 # ! Action list
 # 1. Make carpet plot (?)
 # 2. Make polar graph of strength 
 # 3. Make ply stress graph 
-# 4. Analyse ply failure 
+# 4. Analyse ply failure DONE
 # 5. Allow user input to determine which failure model 
+# 6. Make .exe with PyQt
 
-## Tsai-Wu
-# F1.sigma1 + F2.sigma2 + F6.sigma12 + F11.sigma1**2 + 
-# F22.sigma2**2 + F66.sigma12**2 + 2F12.sigma1.sigma2 < 1
+
 
 
 
